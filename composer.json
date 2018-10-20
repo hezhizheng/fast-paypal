@@ -1,0 +1,22 @@
+{
+    "name": "dexterho/fast-paypal",
+    "description": "PayPal payment sync async and refund",
+    "type": "library",
+    "license": "MIT",
+
+    "authors": [
+        {
+            "name": "DexterHo",
+            "email": "dexter.ho.cn@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "DexterHo\\FastPayPal\\": "src/"
+        }
+    },
+    "minimum-stability": "dev",
+    "require": {
+        "paypal/rest-api-sdk-php": "1.7.4"
+    }
+}
