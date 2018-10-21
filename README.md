@@ -63,6 +63,7 @@ composer update -vvv
         echo $pay; // 直接使用echo ！！！
     }
 ```
+![image](https://raw.githubusercontent.com/hezhizheng/fast-paypal/master/pay-page.jpg)
 ## 异步回调(验证支付是否成功)
 
 ```
