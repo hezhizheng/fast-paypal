@@ -23,7 +23,7 @@ class PayConfig
     public static $amount = '10'; // 支付金额
     public static $currency_code = 'USD'; //
     public static $return = 'http://xblog.frp.hezhizheng.com/paypal/sync';  // 同步回调地址
-    public static $notify_url = 'http://notify.frp.hezhizheng.com/Notify.php'; // 异步回调地址，一定得外网可以访问到的！！！
+    public static $notify_url = 'http://xblog.frp.hezhizheng.com/paypal/async'; // 异步回调地址，一定得外网可以访问到的！！！
     public static $cancel_return = 'https://hezhizheng.com'; // 在支付界面取消返回商家的地址
     public static $invoice = '111111111111'; // 订单号
     public static $charset = 'utf-8'; // 字符集

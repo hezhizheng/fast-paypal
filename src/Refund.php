@@ -14,13 +14,13 @@ use PayPal\Api\Sale;
 use PayPal\Auth\OAuthTokenCredential;
 use PayPal\Rest\ApiContext;
 
-require 'PayConfig.php';
-require '../vendor/autoload.php';
-
-
 class Refund
 {
 
+    /**
+     * @param PayConfig $payConfig
+     * @return array|\PayPal\Api\Refund
+     */
     public static function payPalRefundForTxnId(PayConfig $payConfig)
     {
         error_reporting(E_ALL ^ E_WARNING);
@@ -49,7 +49,11 @@ class Refund
 
         } catch (\Exception $e) {
             // PayPal无效退款
-            return json_decode(json_encode(['message' => $e->getMessage(), 'code' => $e->getCode(), 'state' => $e->getMessage()]));  // to object
+            return [
+                'message' => $e->getMessage(),
+                'code' => $e->getCode(),
+                'state' => $e->getMessage()
+            ];
         }
         // 退款完成
         return $refundedSale;

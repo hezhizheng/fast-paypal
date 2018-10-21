@@ -9,10 +9,13 @@
 
 namespace DexterHo\FastPayPal;
 
-require 'PayConfig.php';
-
 class FastPayPal
 {
+    /**
+     * 直接输出PayPal支付的html页面
+     * @param PayConfig $payConfig
+     * @return string
+     */
     public static function redirectPay(PayConfig $payConfig)
     {
         $html = <<<heredoc

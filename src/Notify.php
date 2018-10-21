@@ -9,15 +9,13 @@
 
 namespace DexterHo\FastPayPal;
 
-require 'PayConfig.php';
-
 class Notify
 {
     /**
-     * 异步回调处理
+     * 异步回调的验证
      * @return string
      */
-    public static function payPalNotifyCallback()
+    public static function checkPaymentStatus()
     {
         $verify = self::verifyNotify();
         if ($verify) {
