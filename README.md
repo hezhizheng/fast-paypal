@@ -1,7 +1,19 @@
 # PayPal 支付、同步回调、异步回调、退款
 
 ## 安装
+```
+// 运行
+composer require dexterho/fast-paypal
 
+// 或者在composer.josn文件中添加
+{
+"require": {
+        "dexterho/fast-paypal": "dev-master"
+    }
+}
+// 运行
+composer update -vvv
+```
 ## 配置说明
 
 ```
@@ -38,9 +50,47 @@
 
 ## 支付
 
-## 回调
+```
+<?php
+    use DexterHo\FastPayPal\FastPayPal;
+    use DexterHo\FastPayPal\PayConfig;
+    public function pay()
+    {
+        $payConfig = new PayConfig();
+        $payConfig::$business = 'xxxx@xxx.com';
+        $payConfig::..... = '....'; // 初始化其他配置
+        $pay = FastPayPal::redirectPay($payConfig);
+        echo $pay; // 直接使用echo ！！！
+    }
+```
+## 异步回调(验证支付是否成功)
+
+```
+<?php
+    use DexterHo\FastPayPal\PayConfig;
+    use DexterHo\FastPayPal\Notify;
+    public function notify()
+    {
+        $payConfig = new PayConfig();
+        $payConfig::$url = 'http://'; // 与支付请求的地址一致
+        $paystatus = Notify::checkPaymentStatus(); // successs or fail
+    }
+```
 
 ## 退款
+
+```
+<?php
+    use DexterHo\FastPayPal\PayConfig;
+    use DexterHo\FastPayPal\Refund;
+    public function refund()
+    {
+        $payConfig = new PayConfig();
+        $payConfig::$txn_id = 'xxxxxxxxx'; // 回调参数中带有txn_id
+        $payConfig::..... = '....'; // 初始化其他配置
+        return Refund::payPalRefundForTxnId($payConfig);
+    }
+```
 
 ## todo
 
