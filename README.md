@@ -1,7 +1,7 @@
 <p align="center">
     <a href="https://packagist.org/packages/dexterho/fast-paypal"><img src="https://img.shields.io/packagist/v/dexterho/fast-paypal.svg" alt="Version"></a>
     <a href="https://packagist.org/packages/dexterho/fast-paypal"><img src="https://img.shields.io/packagist/l/dexterho/fast-paypal.svg" alt="License"></a>
-    <a href="https://github.com/dexterho/fast-paypal/tags"><img src="https://img.shields.io/github/tag/dexterho/fast-paypal.svg" alt="GitHub tag"></a>
+    <a href="https://github.com/hezhizheng/fast-paypal/tags"><img src="https://img.shields.io/github/tag/hezhizheng/fast-paypal.svg" alt="GitHub tag"></a>
 </p>
 
 # PayPal 支付、同步回调、异步回调、退款
@@ -10,14 +10,6 @@
 ```
 // 运行
 composer require dexterho/fast-paypal
-
-// 或者在composer.josn文件中添加
-{
-"require": {
-        "dexterho/fast-paypal": "1.0.0"
-    }
-}
-// 运行
 composer update -vvv
 ```
 ## 配置说明
