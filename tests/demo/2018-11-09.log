@@ -1,0 +1,91 @@
+notify："success"
+notify：{"method":"notify","mc_gross":"10.00","invoice":"440704686","protection_eligibility":"Eligible","payer_id":"RLK9QW29QWR7S","payment_date":"21:44:42 Nov 08, 2018 PST","payment_status":"Completed","charset":"gb2312","first_name":"test","mc_fee":"0.64","notify_version":"3.9","custom":"","payer_status":"verified","business":"920625788-facilitator@qq.com","quantity":"1","verify_sign":"Aj.rCFupK1UW8kkuUjxe59LcaNsjAVP.2lyKOwkgATocIw9YI..oucxi","payer_email":"920625788-buyer@qq.com","txn_id":"96F48113VU645933S","payment_type":"instant","last_name":"buyer","receiver_email":"920625788-facilitator@qq.com","payment_fee":"0.64","shipping_discount":"0.00","receiver_id":"KNPDSVYMUJGQL","insurance_amount":"0.00","txn_type":"web_accept","item_name":"test","discount":"0.00","mc_currency":"USD","item_number":"test","residence_country":"CN","test_ipn":"1","shipping_method":"Default","transaction_subject":"","payment_gross":"10.00","ipn_track_id":"12beed35778f2"}
+refund：{
+object(PayPal\Api\Refund)#10 (1) {
+  ["_propMap":"PayPal\Common\PayPalModel":private]=&gt;
+  array(11) {
+    ["id"]=&gt;
+    string(17) "77128003CW3321419"
+    ["create_time"]=&gt;
+    string(20) "2018-11-09T05:48:45Z"
+    ["update_time"]=&gt;
+    string(20) "2018-11-09T05:48:45Z"
+    ["state"]=&gt;
+    string(9) "completed"
+    ["amount"]=&gt;
+    object(PayPal\Api\Amount)#13 (1) {
+      ["_propMap":"PayPal\Common\PayPalModel":private]=&gt;
+      array(2) {
+        ["total"]=&gt;
+        string(5) "10.00"
+        ["currency"]=&gt;
+        string(3) "USD"
+      }
+    }
+    ["refund_from_transaction_fee"]=&gt;
+    array(2) {
+      ["currency"]=&gt;
+      string(3) "USD"
+      ["value"]=&gt;
+      string(4) "0.34"
+    }
+    ["total_refunded_amount"]=&gt;
+    array(2) {
+      ["currency"]=&gt;
+      string(3) "USD"
+      ["value"]=&gt;
+      string(5) "10.00"
+    }
+    ["refund_from_received_amount"]=&gt;
+    array(2) {
+      ["currency"]=&gt;
+      string(3) "USD"
+      ["value"]=&gt;
+      string(4) "9.66"
+    }
+    ["sale_id"]=&gt;
+    string(17) "96F48113VU645933S"
+    ["parent_payment"]=&gt;
+    string(28) "PAY-5KE95901UT057913MLPSR5SQ"
+    ["links"]=&gt;
+    array(3) {
+      [0]=&gt;
+      object(PayPal\Api\Links)#16 (1) {
+        ["_propMap":"PayPal\Common\PayPalModel":private]=&gt;
+        array(3) {
+          ["href"]=&gt;
+          string(67) "https://api.sandbox.paypal.com/v1/payments/refund/77128003CW3321419"
+          ["rel"]=&gt;
+          string(4) "self"
+          ["method"]=&gt;
+          string(3) "GET"
+        }
+      }
+      [1]=&gt;
+      object(PayPal\Api\Links)#17 (1) {
+        ["_propMap":"PayPal\Common\PayPalModel":private]=&gt;
+        array(3) {
+          ["href"]=&gt;
+          string(79) "https://api.sandbox.paypal.com/v1/payments/payment/PAY-5KE95901UT057913MLPSR5SQ"
+          ["rel"]=&gt;
+          string(14) "parent_payment"
+          ["method"]=&gt;
+          string(3) "GET"
+        }
+      }
+      [2]=&gt;
+      object(PayPal\Api\Links)#18 (1) {
+        ["_propMap":"PayPal\Common\PayPalModel":private]=&gt;
+        array(3) {
+          ["href"]=&gt;
+          string(65) "https://api.sandbox.paypal.com/v1/payments/sale/96F48113VU645933S"
+          ["rel"]=&gt;
+          string(4) "sale"
+          ["method"]=&gt;
+          string(3) "GET"
+        }
+      }
+    }
+  }
+}
+}

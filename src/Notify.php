@@ -33,7 +33,7 @@ class Notify
     {
         $post = $_REQUEST;
 
-        $url = PayConfig::$url;
+        $url = (new PayConfig)->url;
 
         $data['cmd'] = '_notify-validate'; // 增加cmd参数，
 

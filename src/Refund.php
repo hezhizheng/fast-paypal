@@ -25,20 +25,20 @@ class Refund
     {
         error_reporting(E_ALL ^ E_WARNING);
         try {
-            $txn_id = $payConfig::$txn_id;
+            $txn_id = $payConfig->txn_id;
             $apiContext = new ApiContext(
                 new OAuthTokenCredential(
-                    $payConfig::$client_id,
-                    $payConfig::$client_secret
+                    $payConfig->client_id,
+                    $payConfig->client_secret
                 ));  // 这里是我们第一步拿到的数据
 
-            if ($payConfig::$model === 'live') {
+            if ($payConfig->model === 'live') {
                 $apiContext->setConfig(['mode' => 'live']);  // live下设置
             }
 
             $amt = new Amount();
-            $amt->setCurrency($payConfig::$refund_currency_code)
-                ->setTotal($payConfig::$refund_amount);  // 退款的费用
+            $amt->setCurrency($payConfig->refund_currency_code)
+                ->setTotal($payConfig->refund_amount);  // 退款的费用
 
             $refund = new \PayPal\Api\Refund();
             $refund->setAmount($amt);
@@ -51,8 +51,8 @@ class Refund
             // PayPal无效退款
             return [
                 'message' => $e->getMessage(),
-                'code' => $e->getCode(),
-                'state' => $e->getMessage()
+                'code'    => $e->getCode(),
+                'state'   => $e->getMessage()
             ];
         }
         // 退款完成
