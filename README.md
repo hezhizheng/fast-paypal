@@ -10,7 +10,6 @@
 ```
 // 运行
 composer require dexterho/fast-paypal
-composer update -vvv
 ```
 ## 配置说明
 
@@ -97,6 +96,11 @@ composer update -vvv
 ## Demo/Test
 - [Demo](https://github.com/hezhizheng/fast-paypal/blob/master/tests/demo/FastPayPalTest.php)
 - [notify / refund 的数据结构](https://github.com/hezhizheng/fast-paypal/blob/master/tests/demo/2018-11-09.log)
+
+## 已知问题
+-  paypal/rest-api-sdk-php 包引入了 "psr/log": "1.0.0", 如果你的项目已经引入了psr/log 包 版本不一致的话会提示安装失败
+![image](https://raw.githubusercontent.com/hezhizheng/fast-paypal/master/composer-error.jpg)
+    - 解决办法：尝试移除composer.lock 文件 + vendor 目录 重新运行 composer require dexterho/fast-paypal [参考](https://stackoverflow.com/questions/51648949/your-requirements-could-not-be-resolved-to-an-installable-set-of-packages-larav)
 
 ## License
 
